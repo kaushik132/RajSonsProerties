@@ -1,0 +1,84 @@
+@media(max-width:1500px){}
+@media(max-width:1400px){}
+@media(max-width:1200px){}
+@media(max-width:1069px){}
+@media(max-width:991px){}
+@media(max-width:768px){
+
+      #discover-rental .vs-list { height: 180px; }
+  #discover-rental .vertical-slider { max-width: 100%; }
+    #main-hero p {  width: 100%;  }
+    header .navbar-nav {     align-items: flex-start;   }
+     #find-property h2 {   font-size: 1.5rem;  }
+  #find-property p {   font-size: 1rem;  }
+  #testimonials {   padding: 25px 0px;}
+#counter-section h2.counter {   font-size: 25px;  }
+   #counter-section p {  font-size: 14px;}
+.site-footer {   padding: 24px 0px;}
+header .navbar-brand {  width: 15%;}
+#discover-rental .vs-slide-img {  height: 48px;  width: 36%;}
+#discover-rental .vs-slide.next {  transform: translateY(110%) scale(0.98);     width: 95%;}
+      #main-hero {       padding: 100px 0px 100px;}  
+      #discover-rental {   padding: 20px 0px;}
+}
+@media(max-width:643px){}
+@media(max-width:579px){
+       .site-footer p, .site-footer a, .site-footer h5, .site-footer h6 {       font-size: 14px;   }
+    header .navbar-nav {     align-items: flex-start;   }
+    header .navbar-nav {    gap: 20px;  }
+        header .navbar-brand {     width: 24%;   }
+   }
+
+@media(max-width:480px){
+    
+    .sec-title {  font-size: 24px;}
+.sec-subtitle {  font-size: 15px;  font-weight: 400;}
+   header .header-top .top-info li span {  color: #fff;  font-size: 14px;}
+header .header-top .top-info li i img {  width: 25px;  height: 25px;}
+.sticky .headermn .navbar .navbar-brand {   width: 24%;}
+
+header .nav-link {  color: #000;  font-size: 13px;}
+#main-hero .main-content {  width: 100%;  height: auto;  text-align: center;}
+.main-content a {   padding: 10px 5px;  font-size: 12px;}
+#main-hero h1 { margin: 15px 0px;   font-size: 22px;}
+#main-hero h6 {   font-size: 16px;}
+#main-hero p {  font-size: 14px;}
+#main-hero {  padding: 25px 0px;  }
+.footer-bottom p,a{  font-size: 12px !important;}
+.site-footer .footer-bottom { text-align: center;  padding: 10px 10px;}
+.footer-overlay{  text-align: center;}
+.site-footer .f-ul { justify-content: space-evenly;}
+.site-footer .social-icons a i {  line-height: 2.6;}
+ #property-section{padding: 20px 0px;}
+ #property-section .nav-tabs {  gap: 5px;}
+#property-section .nav-tabs button { width: 90px;  }
+#property-section .cards-row {   gap: 10px; }
+   .flat-tab-sec-card-cont .row { row-gap: 0px;}
+#explore-properties { padding: 25px 0px;}
+#explore-properties ul {   flex-wrap: wrap;}
+#discover-rental {    padding: 25px 0px;}
+#discover-rental .vs-slide-img {  width: 50%;}
+.breadcum-part {    padding: 25px 0px;}
+.breadcum-part h2 {       font-size: 24px;}
+.breadcum-part p {  font-size: 14px;}
+#services {    padding: 25px 0px;}
+#services .main-ul {    flex-wrap: wrap; margin-bottom: 10px;}
+    #services .filter-bar {    flex-wrap: nowrap !important;     gap: 5px !important;   }
+    #property-detail { padding: 25px 0px;}
+#property-detail .property-slider img {  height: 250px;  }
+    #property-detail .property-info {  padding: 15px;}
+.amenities {   border: 1px solid #80808070;    padding: 15px;}
+#property-detail .amenity {    font-size: 12px;       padding: 2px 2px;       gap: 2px;        width: 125px;}
+.faq-section {  padding: 25px 10px;}
+#blog-section {  padding: 25px 0px;}
+#blog-detail-sec {  padding: 25px 0px;}
+#blog-detail-sec .blog-content p{  text-align: justify;}
+.login-section {  padding: 25px 10px; }
+.login-section .login-form {   padding: 20px 0px;}
+.property-content {  padding: 10px;}
+.property-details div {  font-size: 12px;}
+.property-heading {  font-size: 16px;}
+}
+
+@media(max-width:400px){}
+@media(max-width:359px){ }
