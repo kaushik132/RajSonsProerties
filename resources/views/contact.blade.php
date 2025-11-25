@@ -2,9 +2,6 @@
 @section('content')
 
 
-
-
-
 <!-- bread cum part  -->
 <section class="breadcum-part">
     <div class="container">

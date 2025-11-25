@@ -26,4 +26,50 @@ class HomeController extends Controller
         return view('blog-detail');
     }
 
+
+    public function service()
+    {
+        return view('service');
+    }
+
+
+    public function serviceDetail()
+    {
+        return view('service-detail');
+    }
+
+
+
+
+
+
+
+    // login functions
+    public function forgot()
+    {
+        return view('forgot');
+    }
+
+    public function setNewPass()
+    {
+        return view('set-new-pass');
+    }
+
+
+
+    public function login()
+    {
+        return view('login');
+    }
+
+    public function register()
+    {
+        return view('signup');
+    }
+
+    public function varificationCode()
+    {
+        return view('varification-code');
+    }
+
 }

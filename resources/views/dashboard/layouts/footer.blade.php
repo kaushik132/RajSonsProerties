@@ -9,7 +9,7 @@
             <div class="row">
                 <!-- Column 1 -->
                 <div class="col-lg-3 col-md-6 mb-4">
-                    <img src="assets/images/logo/logo.png" alt="Logo" class="mb-3 f-logo">
+                    <img src="{{url('assets/images/logo/logo.png')}}" alt="Logo" class="mb-3 f-logo">
                     <p>
                         Unlock performance with data-driven campaigns, creative storytelling, and impactful branding
                     </p>
@@ -26,11 +26,11 @@
                     <div class="links-bx">
                         <h5 class="footer-title">Quick Links</h5>
                         <ul class="list-unstyled">
-                            <li><a href="index.php[">Home</a></li>
+                            <li><a href="{{url('/')}}">Home</a></li>
                             <li><a href="#!">PGs</a></li>
                             <li><a href="#!">Flats</a></li>
-                            <li><a href="blog.php">Blog</a></li>
-                            <li><a href="#!">Contact</a></li>
+                            <li><a href="{{url('blog')}}">Blog</a></li>
+                            <li><a href="{{url('contact-us')}}">Contact</a></li>
                         </ul>
                     </div>
                     <div class="support-bx">
@@ -115,7 +115,6 @@
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 <script src="{{url('assets/js/aos.js')}}" type="text/javascript"></script>
 <script src="{{url('assets/js/custom.js')}}" type="text/javascript" defer></script>
-
 
 
 
