@@ -3,13 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\ServiceCategory;
+use App\Models\ServiceSubCategory;
+use App\Models\Service;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('index');
+        $serviceCategories = ServiceCategory::all();
+        $subserviceCategories = ServiceSubCategory::all();
+        $properties = Service::latest()->limit(8)->get();
+
+        return view('index', compact('serviceCategories', 'subserviceCategories', 'properties'));
     }
+
 
     public function ContactUs()
     {
@@ -71,5 +79,4 @@ class HomeController extends Controller
     {
         return view('varification-code');
     }
-
 }

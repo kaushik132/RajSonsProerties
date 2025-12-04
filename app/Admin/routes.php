@@ -18,7 +18,6 @@ Route::group([
     $router->resource('service-categories', ServiceCategoryController::class);
     $router->resource('service-sub-categories', ServiceSubCategoryController::class);
     $router->resource('services', ServiceController::class);
-
     $router->resource('features', FeaturesController::class);
 
 });
