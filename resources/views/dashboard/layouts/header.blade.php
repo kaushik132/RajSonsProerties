@@ -18,7 +18,7 @@
     <link href="{{url('assets/css/glight-box-min.css')}}" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link
@@ -43,14 +43,14 @@
                        <div class="head-right-cont d-flex align-items-center">
                          <ul class="list-unstyled h-f-ul">
                             <li>
-                                <a href="login.php">Login</a>/
-                                <a href="signup.php">SignUp</a>
+                                <a href="{{url('login')}}">Login</a>/
+                                <a href="{{url('signup')}}">SignUp</a>
                             </li>
                         </ul>
 
                         <ul class="whatsapp d-flex list-unstyled">
 
-                            <li><a href="contact.php">Contact Us</a>
+                            <li><a href="{{url('contact-us')}}">Contact Us</a>
                             </li>
                         </ul>
                        </div>

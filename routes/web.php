@@ -31,6 +31,6 @@ Route::get('forgot', [HomeController::class, 'forgot'])->name('forgot');
 Route::get('login', [HomeController::class, 'login'])->name('login');
 Route::get('set-new-pass', [HomeController::class, 'setNewPass'])->name('setNewPass');
 
-Route::get('register', [HomeController::class, 'register'])->name('register');
+Route::get('signup', [HomeController::class, 'register'])->name('register');
 Route::get('varification-code', [HomeController::class, 'varificationCode'])->name('varificationCode');
 

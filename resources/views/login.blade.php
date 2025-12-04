@@ -55,7 +55,7 @@
                             </button>
                         </div>
 
-                        <p class="text-center mt-4">Don't have an account? <a style="color: var(--main-color);" href="signup.php">Signup</a></p>
+                        <p class="text-center mt-4">Don't have an account? <a style="color: var(--main-color);" href="{{url('signup')}}">Signup</a></p>
                     </form>
                 </div>
             </div>
