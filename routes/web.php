@@ -21,9 +21,9 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('contact-us', [HomeController::class, 'ContactUs'])->name('ContatctUs');
 
 Route::get('blog',[HomeController::class,'blog'])->name('blog');
-Route::get('service',[HomeController::class,'service'])->name('service');
+Route::get('service/{slug?}',[HomeController::class,'service'])->name('service');
 Route::get('blog-detail',[HomeController::class,'blogDetail'])->name('blogDetail');
-Route::get('service-detail',[HomeController::class,'serviceDetail'])->name('serviceDetail');
+Route::get('service-detail/{slug?}',[HomeController::class,'serviceDetail'])->name('serviceDetail');
 
 
 // login routes

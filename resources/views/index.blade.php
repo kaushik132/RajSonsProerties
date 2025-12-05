@@ -107,7 +107,7 @@
                         data-sub="{{ $property->service_sub_id }}">
 
 
-                        <a href="##">
+                        <a href="{{ url('service-detail/' . $property->slug) }}">
                             <div class="property-sec-card">
 
                                 <!-- Image -->

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\ServiceCategory;
 use App\Models\ServiceSubCategory;
 use App\Models\Service;
+use App\Models\Features;
+use COM;
 
 class HomeController extends Controller
 {
@@ -35,17 +37,32 @@ class HomeController extends Controller
     }
 
 
-    public function service()
+    public function service($slug = null)
     {
-        return view('service');
+        if ($slug != null) {
+
+            $serviceCategory = ServiceCategory::where('slug', $slug)->first();
+            $servicesList = Service::latest()->with('serviceCategory')->where('category_id', $serviceCategory->id)->paginate(6);
+        } else {
+            $servicesList = Service::latest()->with('serviceCategory')->paginate(6);
+        }
+
+        return view('service', compact('servicesList'));
     }
 
 
-    public function serviceDetail()
+    public function serviceDetail($slug = null)
     {
-        return view('service-detail');
-    }
+        $servicesData = Service::where('slug', $slug)->first();
 
+        if ($servicesData && is_array($servicesData->itinerary)) {
+            $features = Features::whereIn('id', $servicesData->itinerary)->get();
+        } else {
+            $features = collect();
+        }
+
+        return view('service-detail', compact('servicesData', 'features'));
+    }
 
 
 

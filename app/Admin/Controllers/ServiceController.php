@@ -127,7 +127,7 @@ class ServiceController extends AdminController
 
           $form->saving(function (Form $form) {
 
-           $form->slug = strtolower(preg_replace('/[^A-Za-z0-9-]+/', '-',trim($form->name)));
+           $form->slug = strtolower(preg_replace('/[^A-Za-z0-9-]+/', '-',trim($form->title)));
         });
             $form->text('location', __('Location'));
             $form->text('beds_number', __('Beds number'));
