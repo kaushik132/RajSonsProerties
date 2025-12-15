@@ -7,17 +7,18 @@ use App\Models\ServiceCategory;
 use App\Models\ServiceSubCategory;
 use App\Models\Service;
 use App\Models\Features;
-use COM;
+use App\Models\CustomersFeedback;
 
 class HomeController extends Controller
 {
     public function index()
     {
+             $feedbacks = CustomersFeedback::all();
         $serviceCategories = ServiceCategory::all();
         $subserviceCategories = ServiceSubCategory::all();
         $properties = Service::latest()->limit(8)->get();
 
-        return view('index', compact('serviceCategories', 'subserviceCategories', 'properties'));
+        return view('index', compact('serviceCategories', 'subserviceCategories', 'properties','feedbacks'));
     }
 
 
@@ -53,6 +54,7 @@ class HomeController extends Controller
 
     public function serviceDetail($slug = null)
     {
+        $feedbacks = CustomersFeedback::all();
         $servicesData = Service::where('slug', $slug)->first();
 
         if ($servicesData && is_array($servicesData->itinerary)) {
@@ -61,7 +63,7 @@ class HomeController extends Controller
             $features = collect();
         }
 
-        return view('service-detail', compact('servicesData', 'features'));
+        return view('service-detail', compact('servicesData', 'features','feedbacks'));
     }
 
 

@@ -19,5 +19,5 @@ Route::group([
     $router->resource('service-sub-categories', ServiceSubCategoryController::class);
     $router->resource('services', ServiceController::class);
     $router->resource('features', FeaturesController::class);
-
+    $router->resource('customers-feedbacks', CustomersFeedbackController::class);
 });

@@ -908,111 +908,54 @@
 
             <div class="owl-carousel test-owl">
 
-                <div class="test-card">
-                    <ul class="star-ul">
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/lite-star.png" alt=""></li>
-                    </ul>
-                    <p>Finding the perfect place to stay shouldn’t be stressful. Whether you’re a student, working
-                        professional, or family, we make your accommodation search simple, transparent, and affordable —
-                        from
-                        browsing to booking.</p>
-                    <ul class="test-profile">
-                        <li><img src="assets/images/perofile-1.png" alt=""></li>
-                        <li>
-                            <h4 class="m-0">Sophia</h4>
-                            <p>India, Jaipur</p>
-                        </li>
-                    </ul>
-                    <img class="test-quote" src="assets/images/quote.png" alt="">
-                </div>
-                <div class="test-card">
-                    <ul class="star-ul">
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/lite-star.png" alt=""></li>
-                    </ul>
-                    <p>Finding the perfect place to stay shouldn’t be stressful. Whether you’re a student, working
-                        professional, or family, we make your accommodation search simple, transparent, and affordable —
-                        from
-                        browsing to booking.</p>
-                    <ul class="test-profile">
-                        <li><img src="assets/images/perofile-1.png" alt=""></li>
-                        <li>
-                            <h4 class="m-0">Sophia</h4>
-                            <p>India, Jaipur</p>
-                        </li>
-                    </ul>
-                    <img class="test-quote" src="assets/images/quote.png" alt="">
-                </div>
-                <div class="test-card">
-                    <ul class="star-ul">
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/lite-star.png" alt=""></li>
-                    </ul>
-                    <p>Finding the perfect place to stay shouldn’t be stressful. Whether you’re a student, working
-                        professional, or family, we make your accommodation search simple, transparent, and affordable —
-                        from
-                        browsing to booking.</p>
-                    <ul class="test-profile">
-                        <li><img src="assets/images/perofile-1.png" alt=""></li>
-                        <li>
-                            <h4 class="m-0">Sophia</h4>
-                            <p>India, Jaipur</p>
-                        </li>
-                    </ul>
-                    <img class="test-quote" src="assets/images/quote.png" alt="">
-                </div>
-                <div class="test-card">
-                    <ul class="star-ul">
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/lite-star.png" alt=""></li>
-                    </ul>
-                    <p>Finding the perfect place to stay shouldn’t be stressful. Whether you’re a student, working
-                        professional, or family, we make your accommodation search simple, transparent, and affordable —
-                        from
-                        browsing to booking.</p>
-                    <ul class="test-profile">
-                        <li><img src="assets/images/perofile-1.png" alt=""></li>
-                        <li>
-                            <h4 class="m-0">Sophia</h4>
-                            <p>India, Jaipur</p>
-                        </li>
-                    </ul>
-                    <img class="test-quote" src="assets/images/quote.png" alt="">
-                </div>
-                <div class="test-card">
-                    <ul class="star-ul">
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/lite-star.png" alt=""></li>
-                    </ul>
-                    <p>Finding the perfect place to stay shouldn’t be stressful. Whether you’re a student, working
-                        professional, or family, we make your accommodation search simple, transparent, and affordable —
-                        from
-                        browsing to booking.</p>
-                    <ul class="test-profile">
-                        <li><img src="assets/images/perofile-1.png" alt=""></li>
-                        <li>
-                            <h4 class="m-0">Sophia</h4>
-                            <p>India, Jaipur</p>
-                        </li>
-                    </ul>
-                    <img class="test-quote" src="assets/images/quote.png" alt="">
-                </div>
+
+               @foreach ($feedbacks as $feedback)
+                    <div class="test-card">
+                        @php
+                            $rating = $feedback->star; // eg: 2.4, 4.5, 5
+                            $fullStars = floor($rating); // poore stars
+                            $halfStar = $rating - $fullStars >= 0.5 ? 1 : 0;
+                            $emptyStars = 5 - ($fullStars + $halfStar);
+                        @endphp
+
+                        <ul class="star-ul">
+                            {{-- Full stars --}}
+                            @for ($i = 0; $i < $fullStars; $i++)
+                                <li>
+                                    <img src="{{ url('assets/images/str.png') }}" alt="star">
+                                </li>
+                            @endfor
+
+                            {{-- Half star --}}
+                            @if ($halfStar)
+                                <li>
+                                    <img src="{{ url('assets/images/half-star.png') }}" alt="half star">
+                                </li>
+                            @endif
+
+                            {{-- Empty stars --}}
+                            @for ($i = 0; $i < $emptyStars; $i++)
+                                <li>
+                                    <img src="{{ url('assets/images/lite-star.png') }}" alt="empty star">
+                                </li>
+                            @endfor
+                        </ul>
+
+                        <p>{{ $feedback->feedback }}</p>
+                        <ul class="test-profile">
+                            <li><img src="{{ url('uploads/' . $feedback->image) }}" alt=""></li>
+                            <li>
+                                <h4 class="m-0">{{ $feedback->name }}</h4>
+                                <p>{{ $feedback->location }}</p>
+                            </li>
+                        </ul>
+                        <img class="test-quote" src="{{ url('assets/images/quote.png') }}" alt="quote">
+                    </div>
+                @endforeach
+
+
+
+
 
 
 
