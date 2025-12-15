@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Dotenv\Repository\Adapter\GuardedWriter;
 use Illuminate\Database\Eloquent\Model;
 
 class Service extends Model

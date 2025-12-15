@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raj Sons Properties</title>
 
-    <link rel="icon" type="image/png" href="assets/images/logo/logo.png">
+    <link rel="icon" type="image/png" href="{{url('assets/images/logo/logo.png')}}">
     <link rel="stylesheet" href="{{url('assets/css/owl.theme.default.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{url('assets/css/owl.carousel.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{url('assets/css/all.min.css')}}" type="text/css">
@@ -34,28 +34,46 @@
             <div class="container">
                 <div class="headermn">
                     <nav class="navbar p-0 align-items-center">
-                        <a class="navbar-brand" href="{{url('/')}}" data-aos="fade-right" data-aos-duration="1500">
-                            <img src="{{url('assets/images/logo/logo.png')}}" alt="">
+                        <a class="navbar-brand aos-init aos-animate" href="{{url('/')}}" data-aos="fade-right" data-aos-duration="1500">
+                            <img src="{{url('assets/images/logo/logo.png')}}" alt="Raj Sons">
+
                         </a>
 
 
 
-                       <div class="head-right-cont d-flex align-items-center">
-                         <ul class="list-unstyled h-f-ul">
-                            <li>
-                                <a href="{{url('login')}}">Login</a>/
-                                <a href="{{url('signup')}}">SignUp</a>
-                            </li>
-                        </ul>
+                        <div class="head-right-cont d-flex align-items-center">
+                            <ul class="list-unstyled h-f-ul">
+                                <li>
+                                    <a href="{{url('login')}}" class="icon-link">
+                                        <img src="{{url('assets/images/login-1.png')}}" alt="Login">
+                                    </a>
+                                    <a href="{{url('signup')}}" class="icon-link">
+                                        <img src="{{url('assets/images/signup-1.png')}}" alt="Sign Up">
+                                    </a>
+                                </li>
+                                <li><button class="menu-toggle" aria-label="Toggle Menu" aria-pressed="false">
+                                        <i class="fa fa-bars"></i>
+                                    </button></li>
+                            </ul>
 
-                        <ul class="whatsapp d-flex list-unstyled">
 
-                            <li><a href="{{url('contact-us')}}">Contact Us</a>
-                            </li>
-                        </ul>
-                       </div>
+
+                            <!-- Overlay + Sidebar -->
+                            <div class="offcanvas-overlay" aria-hidden="true">
+                                <nav class="offcanvas-menu">
+                                    <ul class="whatsapp-off list-unstyled">
+                                        <li><a href="{{url('/')}}">Main</a></li>
+                                        <li><a href="about.php">About Us</a></li>
+                                        <li><a href="{{url('service')}}">Services</a></li>
+                                        <li><a href="{{url('contact-us')}}">Contact Us</a></li>
+                                        <li><a href="{{url('blog')}}">Blogs</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </nav>
                 </div>
-                </nav>
+
             </div>
         </div>
         </div>

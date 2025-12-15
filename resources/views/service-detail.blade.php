@@ -55,12 +55,13 @@
                         <div class="d-flex flex-wrap gap-3 mb-3 text-muted small mt-3">
                             <span><i class="fa-solid fa-bed me-1"></i>{{ $servicesData->beds_number }} Bed</span>
                             <span><i class="fa-solid fa-bath me-1"></i>{{ $servicesData->baths_number }} Bath</span>
-                            <span><i class="fa-solid fa-ruler-combined me-1"></i>{{ $servicesData->size_of_area }} sq.ft</span>
+                            <span><i class="fa-solid fa-ruler-combined me-1"></i>{{ $servicesData->size_of_area }}
+                                sq.ft</span>
                         </div>
                         <hr>
                         <h6 class="fw-bold mb-3">Description</h6>
                         <p class="text-muted mb-3">
-                           {{ $servicesData->description }}
+                            {!! $servicesData->description !!}
                         </p>
 
 
@@ -71,11 +72,11 @@
                     <div class="amenities rounded-4 shadow-sm bg-white mt-2">
                         <h6 class="fw-bold mb-3">Amenities & Features</h6>
                         <div class="d-flex flex-wrap gap-2">
-                    @foreach ($features as $feature)
-    <span class="amenity">
-        <i class="fa-solid fa-car"></i> {{ $feature->name }}
-    </span>
-@endforeach
+                            @foreach ($features as $feature)
+                                <span class="amenity">
+                                    <i class="fa-solid fa-car"></i> {{ $feature->name }}
+                                </span>
+                            @endforeach
 
 
                         </div>
@@ -85,34 +86,34 @@
                         <div class="col-md-6">
                             <div class="pro-detai-info">
                                 <span>Property Type</span>
-                                <span>PG</span>
+                                <span>{{ $servicesData->property_type }}</span>
                             </div>
                             <hr>
                             <div class="pro-detai-info">
                                 <span>Bathrooms</span>
-                                <span>1</span>
+                                <span>{{ $servicesData->baths_number }}</span>
                             </div>
                             <hr>
                             <div class="pro-detai-info">
                                 <span>Furnishing</span>
-                                <span>Semi-Furnishing</span>
+                                <span>{{ $servicesData->furnishing }}</span>
                             </div>
                             <hr>
                         </div>
                         <div class="col-md-6">
                             <div class="pro-detai-info">
                                 <span>Bedrooms</span>
-                                <span>1</span>
+                                <span>{{ $servicesData->beds_number }}</span>
                             </div>
                             <hr>
                             <div class="pro-detai-info">
                                 <span>Area</span>
-                                <span>Single Room</span>
+                                <span>{{ $servicesData->area }}</span>
                             </div>
                             <hr>
                             <div class="pro-detai-info">
                                 <span>Parking</span>
-                                <span>Available</span>
+                                <span>{{ $servicesData->parking }}</span>
                             </div>
                             <hr>
                         </div>
@@ -121,7 +122,7 @@
                         <h6 class="fw-bold mb-3">Location</h6>
                         <div class="map-box">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254438.18012917964!2d75.79055784999998!3d26.885210750000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396c4adf4c57e281%3A0xce1c63a0cf22e09!2sJaipur%2C%20Rajasthan!5e1!3m2!1sen!2sin!4v1763011312944!5m2!1sen!2sin"
+                                src="{{ $servicesData->location_map }}"
                                 width="100%" height="300" style="border:0; border-radius: 10px;" allowfullscreen=""
                                 loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
@@ -156,10 +157,10 @@
 
                         <div class="mt-4">
                             <div class="contact-info phone-box p-2 rounded mb-2 d-flex align-items-center">
-                                <i class="fa-solid fa-phone me-2"></i> +91 9657854327
+                                <i class="fa-solid fa-phone me-2"></i> {{ $servicesData->agent_number }}
                             </div>
                             <div class="contact-info email-box p-2 rounded mb-2 d-flex align-items-center">
-                                <i class="fa-solid fa-envelope me-2"></i> info@example@gmail.com
+                                <i class="fa-solid fa-envelope me-2"></i> {{ $servicesData->agent_email }}
                             </div>
                             <div class="contact-info msg-box p-2 rounded d-flex align-items-center">
                                 <i class="fa-solid fa-comment me-2"></i> Message
@@ -171,8 +172,8 @@
                         <div class="agent-info d-flex align-items-center">
                             <i class="fa-solid fa-user-tie text-warning fs-4 me-3"></i>
                             <div>
-                                <h6 class="m-0 fw-bold">Jaipur Realty</h6>
-                                <small class="text-muted">Verified Agent since 2010</small>
+                                <h6 class="m-0 fw-bold">{{ $servicesData->agent_name }}</h6>
+                                <small class="text-muted">Verified Agent since {{ $servicesData->varify_agent_year }}</small>
                             </div>
                         </div>
                     </div>
@@ -193,10 +194,10 @@
 
                 <div class="test-card">
                     <ul class="star-ul">
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/str.png" alt=""></li>
+                        <li><img src="{{url('assets/images/str.png')}}" alt=""></li>
+                        <li><img src="{{url('assets/images/str.png')}}" alt=""></li>
+                        <li><img src="{{url('assets/images/str.png')}}" alt=""></li>
+                        <li><img src="{{url('assets/images/str.png')}}" alt=""></li>
                         <li><img src="assets/images/lite-star.png" alt=""></li>
                     </ul>
                     <p>Finding the perfect place to stay shouldn’t be stressful. Whether you’re a student, working
@@ -214,10 +215,10 @@
                 </div>
                 <div class="test-card">
                     <ul class="star-ul">
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/str.png" alt=""></li>
+                        <li><img src="{{url('assets/images/str.png')}}" alt=""></li>
+                        <li><img src="{{url('assets/images/str.png')}}" alt=""></li>
+                        <li><img src="{{url('assets/images/str.png')}}" alt=""></li>
+                        <li><img src="{{url('assets/images/str.png')}}" alt=""></li>
                         <li><img src="assets/images/lite-star.png" alt=""></li>
                     </ul>
                     <p>Finding the perfect place to stay shouldn’t be stressful. Whether you’re a student, working
@@ -235,10 +236,10 @@
                 </div>
                 <div class="test-card">
                     <ul class="star-ul">
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/str.png" alt=""></li>
+                        <li><img src="{{url('assets/images/str.png')}}" alt=""></li>
+                        <li><img src="{{url('assets/images/str.png')}}" alt=""></li>
+                        <li><img src="{{url('assets/images/str.png')}}" alt=""></li>
+                        <li><img src="{{url('assets/images/str.png')}}" alt=""></li>
                         <li><img src="assets/images/lite-star.png" alt=""></li>
                     </ul>
                     <p>Finding the perfect place to stay shouldn’t be stressful. Whether you’re a student, working
@@ -256,10 +257,10 @@
                 </div>
                 <div class="test-card">
                     <ul class="star-ul">
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/str.png" alt=""></li>
+                        <li><img src="{{url('assets/images/str.png')}}" alt=""></li>
+                        <li><img src="{{url('assets/images/str.png')}}" alt=""></li>
+                        <li><img src="{{url('assets/images/str.png')}}" alt=""></li>
+                        <li><img src="{{url('assets/images/str.png')}}" alt=""></li>
                         <li><img src="assets/images/lite-star.png" alt=""></li>
                     </ul>
                     <p>Finding the perfect place to stay shouldn’t be stressful. Whether you’re a student, working
@@ -277,10 +278,10 @@
                 </div>
                 <div class="test-card">
                     <ul class="star-ul">
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/str.png" alt=""></li>
-                        <li><img src="assets/images/str.png" alt=""></li>
+                        <li><img src="{{url('assets/images/str.png')}}" alt=""></li>
+                        <li><img src="{{url('assets/images/str.png')}}" alt=""></li>
+                        <li><img src="{{url('assets/images/str.png')}}" alt=""></li>
+                        <li><img src="{{url('assets/images/str.png')}}" alt=""></li>
                         <li><img src="assets/images/lite-star.png" alt=""></li>
                     </ul>
                     <p>Finding the perfect place to stay shouldn’t be stressful. Whether you’re a student, working
@@ -317,76 +318,48 @@
             </div>
 
             <div class="accordion" id="faqAccordion">
+                <?php   if($servicesData->question!=null){   ?>
                 <!-- 01 -->
+                  <?php
+
+                   $questions = explode("__",$servicesData->question);
+                   $answers = explode("__",$servicesData->answer);
+
+                     foreach ($questions as $key => $value) {
+
+                        $mainEntity[$key]['@type'] ='Question';
+                        $mainEntity[$key]['name'] =$value.'?';
+                        $mainEntity[$key]['acceptedAnswer']['@type'] ='Answer';
+                        $mainEntity[$key]['acceptedAnswer']['text'] =$answers[$key].'.';
+
+                    ?>
+                    @php
+                        $num = $key ;
+                        $num++;
+                    @endphp
                 <div class="accordion-item border-0">
-                    <h2 class="accordion-header" id="headingOne">
+                    <h2 class="accordion-header" id="heading{{$key}}">
                         <button class="accordion-button collapsed d-flex align-items-center" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                            <span class="faq-number me-3">01</span>
-                            <span class="faq-question">What services does your marketing agency offer?</span>
+                            data-bs-toggle="collapse" data-bs-target="#collapse{{$key}}">
+                            <span class="faq-number me-3">@php
+                                echo $num;
+                            @endphp</span>
+                            <span class="faq-question">{!! $value !!}?</span>
                             <i class="fa-solid fa-chevron-down ms-auto"></i>
                         </button>
                     </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div id="collapse{{$key}}" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                         <div class="accordion-body text-muted small ps-5">
-                            We provide full-service marketing solutions including branding, social media management, SEO,
-                            paid ads, and content marketing strategies.
+                           {!! $answers[$key] !!}
                         </div>
                     </div>
                 </div>
 
-                <!-- 02 -->
-                <div class="accordion-item border-0">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed d-flex align-items-center" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                            <span class="faq-number me-3">02</span>
-                            <span class="faq-question">How long does it take to see results?</span>
-                            <i class="fa-solid fa-chevron-down ms-auto"></i>
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body text-muted small ps-5">
-                            It depends on your campaign type and goals. Paid ads can show results in days, while organic
-                            strategies like SEO may take a few months.
-                        </div>
-                    </div>
-                </div>
+   <?php } ?>
 
-                <!-- 03 -->
-                <div class="accordion-item border-0">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed d-flex align-items-center" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#collapseThree">
-                            <span class="faq-number me-3">03</span>
-                            <span class="faq-question">Do you work with businesses of all sizes?</span>
-                            <i class="fa-solid fa-chevron-down ms-auto"></i>
-                        </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body text-muted small ps-5">
-                            Yes, we collaborate with startups, small businesses, and large enterprises across multiple
-                            industries.
-                        </div>
-                    </div>
-                </div>
+ <?php } ?>
 
-                <!-- 04 -->
-                <div class="accordion-item border-0">
-                    <h2 class="accordion-header" id="headingFour">
-                        <button class="accordion-button collapsed d-flex align-items-center" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#collapseFour">
-                            <span class="faq-number me-3">04</span>
-                            <span class="faq-question">What industries do you specialize in?</span>
-                            <i class="fa-solid fa-chevron-down ms-auto"></i>
-                        </button>
-                    </h2>
-                    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body text-muted small ps-5">
-                            We specialize in tech, healthcare, education, travel, and real estate industries.
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
